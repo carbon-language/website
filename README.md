@@ -6,11 +6,9 @@ Exceptions. See /LICENSE for license information.
 SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 -->
 
-This repository serves <https://carbon-lang.dev>.
+This repository serves <https://carbon-lang.dev/preview/> for now.
 
-- **Root (`/`):** Currently provides a redirect from `https://carbon-lang.dev` to
-  <https://github.com/carbon-language/carbon-lang/>. The `index.html` file
-  returns a `200` response for Azure and VS Code Marketplace verification rather
-  than a `404`.
-- **Preview (`/preview/`):** Contains the staging preview of the Carbon landing
-  page (`https://carbon-lang.dev/preview/`).
+- **Preview (`/preview/`):** The staging preview of the Carbon landing page,
+  at <https://carbon-lang.dev/preview/>.
+- **Root (`/`):** Redirects <https://carbon-lang.dev> to
+  <https://github.com/carbon-language/carbon-lang/>.
