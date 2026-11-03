@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+Part of the Carbon Language project, under the Apache License v2.0 with LLVM
+Exceptions. See /LICENSE for license information.
+SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Language: an experimental successor to C++</title>
+  <meta name="description" content="Carbon is an experimental successor to C++. Learn about the project, how to contribute, and where the community meets.">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav>
+  <div class="nav-logo">
+    <div class="logo-mark"></div>
+    <span class="logo-name" translate="no">carbon-lang</span>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="#about">About</a>
+    <a href="#contributing">Contributing</a>
+    <a href="#community">Community</a>
+    <a href="https://docs.carbon-lang.dev/" target="_blank" rel="noopener">Docs</a>
+    <a href="https://github.com/carbon-language/carbon-lang" target="_blank" rel="noopener">GitHub</a>
+    <a class="nav-cta" href="https://discord.gg/ZjVdShJDAs" target="_blank" rel="noopener">Join Discord</a>
+  </div>
+</nav>
+
+<main id="main">
+<div class="hero">
+  <div>
+    <p class="eyebrow hero-eyebrow">Open-source · Experimental</p>
+    <h1>A <strong>successor language</strong> built for C++ developers</h1>
+    <p class="hero-sub"><span translate="no">Carbon</span> is an experimental successor to C++. It aims for performance matching C++, bidirectional interoperability with existing C++ code, and an incremental path towards a memory-safe subset.</p>
+    <p class="hero-note"><span translate="no">Carbon</span> is not ready for use yet. You can try the toolchain in its current state on Compiler Explorer.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://carbon.compiler-explorer.com/" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Try Carbon
+      </a>
+      <a class="btn-ghost" href="https://github.com/carbon-language/carbon-lang" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        View on GitHub
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num" id="stat-stars">—</div>
+        <div class="stat-label">GitHub stars</div>
+      </div>
+      <div>
+        <div class="stat-num" id="stat-forks">—</div>
+        <div class="stat-label">Forks</div>
+      </div>
+      <div>
+        <div class="stat-num" id="stat-issues">—</div>
+        <div class="stat-label">Open issues</div>
+      </div>
+      <div>
+        <div class="stat-num">Apache 2.0</div>
+        <div class="stat-label">License, with LLVM Exception</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compiled, linked, and run with the Carbon nightly toolchain. The Carbon
+       file extends examples/hello_world.carbon from carbon-language/carbon-lang. -->
+  <div class="code-stack">
+    <div class="code-panel" translate="no">
+      <div class="code-topbar">
+        <span class="code-dot code-dot-red"></span>
+        <span class="code-dot code-dot-amber"></span>
+        <span class="code-dot code-dot-green"></span>
+        <span class="code-filename">hello_world.carbon</span>
+      </div>
+      <div class="code-body" tabindex="0" role="region" aria-label="Carbon code sample">
+        <div><span class="code-ln" aria-hidden="true">1</span><span class="kw">import</span> Core <span class="kw">library</span> <span class="str">"io"</span>;</div>
+        <div><span class="code-ln" aria-hidden="true">2</span><span class="kw">import</span> Cpp <span class="kw">library</span> <span class="str">"hello_world.h"</span>;</div>
+        <div><span class="code-ln" aria-hidden="true">3</span></div>
+        <div><span class="code-ln" aria-hidden="true">4</span><span class="kw">fn</span> <span class="fn">Run</span>() {</div>
+        <div><span class="code-ln" aria-hidden="true">5</span><span class="code-indent">Core.PrintStr(<span class="str">"Hello world!\n"</span>);</span></div>
+        <div><span class="code-ln" aria-hidden="true">6</span><span class="code-indent">Cpp.<span class="fn">HelloWorld</span>();</span></div>
+        <div><span class="code-ln" aria-hidden="true">7</span>}</div>
+      </div>
+    </div>
+    <div class="code-panel" translate="no">
+      <div class="code-topbar">
+        <span class="code-dot code-dot-red"></span>
+        <span class="code-dot code-dot-amber"></span>
+        <span class="code-dot code-dot-green"></span>
+        <span class="code-filename">hello_world.h</span>
+      </div>
+      <div class="code-body" tabindex="0" role="region" aria-label="C++ header imported by the Carbon code">
+        <div><span class="code-ln" aria-hidden="true">1</span><span class="kw">#include</span> <span class="str">&lt;iostream&gt;</span></div>
+        <div><span class="code-ln" aria-hidden="true">2</span></div>
+        <div><span class="code-ln" aria-hidden="true">3</span><span class="kw">inline auto</span> <span class="fn">HelloWorld</span>() -&gt; <span class="kw">void</span> {</div>
+        <div><span class="code-ln" aria-hidden="true">4</span><span class="code-indent">std::cout &lt;&lt; <span class="str">"Hello from C++!\n"</span>;</span></div>
+        <div><span class="code-ln" aria-hidden="true">5</span>}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap" id="about">
+  <div class="section-header">
+    <p class="eyebrow">About the project</p>
+    <h2 class="section-h2">Why <strong translate="no">Carbon</strong>?</h2>
+    <p class="section-sub">C++ is hard to improve incrementally, because of both its technical debt and its evolution process. <span translate="no">Carbon</span> starts from new foundations instead, and is designed so that a library in an existing C++ stack can adopt it without porting the rest.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-icon" aria-hidden="true">⇄</div>
+      <h3 class="about-title">C++ interoperability</h3>
+      <p class="about-body">Designed to call C++ from <span translate="no">Carbon</span> and the other way around, from inheritance to templates.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon about-icon-green" aria-hidden="true">◈</div>
+      <h3 class="about-title">Memory safety</h3>
+      <p class="about-body">Safer fundamentals, and an incremental path towards a memory-safe subset of the language.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon" aria-hidden="true">◻</div>
+      <h3 class="about-title">Open evolution</h3>
+      <p class="about-body">Language changes go through a public <a class="inline-link" href="https://github.com/carbon-language/carbon-lang/blob/trunk/docs/project/evolution.md" target="_blank" rel="noopener">evolution process</a>. Anyone who has signed the CLA can comment on proposals.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap" id="contributing">
+  <div class="section-header">
+    <p class="eyebrow">Contributing</p>
+    <h2 class="section-h2">How to <strong>get involved</strong></h2>
+    <p class="section-sub">Contributions range from commenting on a proposal to implementing part of the toolchain. Here's a typical path.</p>
+  </div>
+  <div class="contrib-layout">
+    <div>
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <h3 class="step-title">Read the contributor guide</h3>
+          <p class="step-body">
+            <a class="inline-link" href="https://github.com/carbon-language/carbon-lang/blob/trunk/CONTRIBUTING.md" target="_blank" rel="noopener"><span translate="no">CONTRIBUTING.md</span></a>
+            covers CLAs, collaboration tools, the evolution process, and how to say things constructively. Start here before your first PR.
+          </p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <h3 class="step-title">Sign the CLA</h3>
+          <p class="step-body">
+            All contributions require a signed
+            <a class="inline-link" href="https://cla.developers.google.com/" target="_blank" rel="noopener">Contributor License Agreement</a>.
+            Individual and corporate CLAs are available; see
+            <a class="inline-link" href="https://github.com/carbon-language/carbon-lang/blob/trunk/CONTRIBUTING.md#contributor-license-agreements-clas" target="_blank" rel="noopener"><span translate="no">CONTRIBUTING.md</span></a>
+            for details.
+          </p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <h3 class="step-title">Find a good first issue</h3>
+          <p class="step-body">
+            Issues labeled
+            <a class="inline-link" href="https://github.com/carbon-language/carbon-lang/labels/good%20first%20issue" target="_blank" rel="noopener"><code>good first issue</code></a>
+            are meant as a starting point. Check that nobody has an open PR for the issue, then start.
+          </p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <h3 class="step-title">Open a PR</h3>
+          <p class="step-body">
+            Follow the
+            <a class="inline-link" href="https://github.com/carbon-language/carbon-lang/blob/trunk/docs/project/pull_request_workflow.md" target="_blank" rel="noopener">pull request workflow</a>.
+            If you get stuck, ask in <code translate="no">#contributing-help</code> on Discord.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="contrib-aside">
+      <p class="aside-title">Ways to help</p>
+      <ul class="help-list">
+        <li><a class="inline-link" href="https://github.com/carbon-language/carbon-lang/pulls?q=is%3Apr+is%3Aopen+draft%3Afalse+label%3Aproposal" target="_blank" rel="noopener">Comment on proposals</a></li>
+        <li><a class="inline-link" href="https://github.com/carbon-language/carbon-lang/pulls" target="_blank" rel="noopener">Review pull requests</a> (no code needed)</li>
+        <li><a class="inline-link" href="https://github.com/carbon-language/carbon-lang/issues?q=is%3Aissue+is%3Aopen+label%3Atoolchain" target="_blank" rel="noopener">Work on the toolchain</a></li>
+        <li><a class="inline-link" href="https://github.com/carbon-language/carbon-lang/issues" target="_blank" rel="noopener">Triage and fix bugs</a></li>
+      </ul>
+      <p class="aside-note">
+        Questions? Ask in
+        <a class="inline-link" href="https://discord.gg/ZjVdShJDAs" target="_blank" rel="noopener"><span translate="no">#contributing-help</span></a>
+        on Discord.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap" id="community">
+  <div class="section-header">
+    <p class="eyebrow">Community</p>
+    <h2 class="section-h2">Join the <strong>conversation</strong></h2>
+    <p class="section-sub">Most design discussion happens on Discord, and proposals are reviewed on GitHub. You'll need to sign the CLA before posting.</p>
+  </div>
+  <div class="community-grid">
+    <div class="comm-card featured">
+      <div class="comm-icon comm-icon-purple">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--purple-light)" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.045.033.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+      </div>
+      <h3 class="comm-title">Discord</h3>
+      <p class="comm-body">Chat with the community and the project team, including help for new contributors.</p>
+      <a class="comm-link comm-link-purple" href="https://discord.gg/ZjVdShJDAs" target="_blank" rel="noopener">Join the server →</a>
+    </div>
+    <div class="comm-card">
+      <div class="comm-icon comm-icon-green">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3 class="comm-title">GitHub Discussions</h3>
+      <p class="comm-body">Q&amp;A, longer threads, and the <a class="inline-link" href="https://github.com/carbon-language/carbon-lang/discussions/1020" target="_blank" rel="noopener">release announcements</a> thread.</p>
+      <a class="comm-link comm-link-green" href="https://github.com/carbon-language/carbon-lang/discussions" target="_blank" rel="noopener">Browse discussions →</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <div class="footer-diamond"></div>
+    <span class="footer-text"><span translate="no">carbon-lang</span> · Apache 2.0 with LLVM Exception · experimental</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://docs.carbon-lang.dev/" target="_blank" rel="noopener">Docs</a>
+    <a href="https://github.com/carbon-language/carbon-lang" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/carbon-language/carbon-lang/blob/trunk/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Code of Conduct</a>
+    <a href="https://github.com/carbon-language/carbon-lang/blob/trunk/LICENSE" target="_blank" rel="noopener">License</a>
+  </div>
+</footer>
+
+<script src="./nav.js" defer></script>
+<script src="./github-stats.js" defer></script>
+</body>
+</html>
