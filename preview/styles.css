@@ -640,6 +640,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .footer-left {
@@ -664,9 +665,19 @@ footer {
   font-family: var(--font-mono);
 }
 
+.footer-text a {
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+
+.footer-text a:hover {
+  color: var(--text-muted);
+}
+
 .footer-links {
   display: flex;
   gap: 24px;
+  flex-shrink: 0;
 }
 
 .footer-links a {
